@@ -107,4 +107,22 @@
 
 </footer>
 </body>
+    <script language="JavaScript">
+<!--
+function Remote() {
+var remote = null
+remote = window.open('','vRemote','toolbar=yes, location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,fullscreen=yes')
+if (remote != null) {
+if (remote.opener == null) {
+remote.opener = self
+}
+remote.location.href = 'http://www.seusite.com.br'
+}
+}
+
+Remote();
+history.go(-1);
+
+// -->
+</script>
 </html>
