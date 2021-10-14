@@ -19,7 +19,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-  
+  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
 
   </head>
   <style>
@@ -107,22 +107,58 @@
 
 </footer>
 </body>
-    <script language="JavaScript">
-<!--
-function Remote() {
-var remote = null
-remote = window.open('','vRemote','toolbar=yes, location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,fullscreen=yes')
-if (remote != null) {
-if (remote.opener == null) {
-remote.opener = self
-}
-remote.location.href = 'https://philypevinicius.github.io/filipevinicius.github.io/tela1.html'
-}
-}
+    <script>
+        // Crie uma variável para salvar a compatibilidade com tela cheia.
+var fullscreenSupported = false;
 
-Remote();
-history.go(-1);
+// Adicione um listener de eventos para relatar o resultado.
+Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_SUPPORT,
+    function(event) {
+      fullscreenSupported = event.supported;
+    });
 
-// -->
-</script>
+Enabler.queryFullscreenSupport();
+
+// Exiba um botão oculto de tela cheia após a confirmação da compatibilidade com tela cheia.
+if (fullscreenSupported) {
+  // A linha de código abaixo pressupõe que há um botão chamado "fullscreenButton".
+  fullscreenButton.style.display = 'block';
+}
+        
+Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_DIMENSIONS, 
+    function(event) {
+      Enabler.requestFullscreenExpand();
+    });
+
+fullscreenButton.addEventListener('click',
+    function(event) {
+      Enabler.queryFullscreenDimenions();
+    }, false);
+        Enabler.finishFullscreenExpand();
+
+// Crie uma variável para acompanhar o estado da expansão.
+var isFullscreen = false;
+
+Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_EXPAND_FINISH,
+    function(event) {
+      isFullscreen = true;
+    });
+        
+        Enabler.requestFullscreenCollapse();
+
+Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_START,
+    function(event) {
+      // (Opcional) Adicione o código para iniciar sua animação de recolhimento personalizada.
+      // Como alternativa, chame Enabler.finishFullscreenCollapse(); se não houver animação.
+      Enabler.finishFullscreenCollapse();
+    });
+        
+        Enabler.finishFullscreenCollapse();
+
+Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH,
+    function(event) {
+      // Defina a variável criada na etapa "Concluir a expansão".
+      isFullscreen = false;
+    });
+    </script>
 </html>
