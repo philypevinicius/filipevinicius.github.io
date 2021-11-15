@@ -17,6 +17,22 @@
 
     <style>
 
+        figure { width: 90%; min-width: 17.5em; margin:0 auto;}
+figcaption { font: 120% sans-serif; text-align: center;}
+.boxVideo {
+    position: relative;
+    padding-bottom: 56.25%; 
+    padding-top: 25px;
+    height: 0;
+    margin:0 auto;
+}
+.boxVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
     </style>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -38,10 +54,12 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <!-- inicio do card -->
-
-          <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="./img/vid/vid1.mp4" allowfullscreen></iframe>
-</div>
+<figure>
+    <div class="boxVideo">
+        <iframe src="http://player.vimeo.com/video/10230706" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/10230706">Smarty aula 1</a> from <a href="http://vimeo.com/user3121269">kadunew.com/blog</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    </div>
+<figcaption>Exemplo de vídeo Responsivo do Vimeo</figcaption>
+</figure>
     </div>
   </div>
 </div>
