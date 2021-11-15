@@ -17,14 +17,6 @@
 
     <style>
         
-        
-        #wrapper { width: 400px; height: 400px; }
-            #wrapper.paisagem { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); background-color: lightgreen; }
-            #wrapper.retrato { background-color: lightblue; }
-        
-        
-        
-
        figure { width: 90%; min-width: 320px; margin:0 auto;}
 figcaption { font: 120% sans-serif; text-align: center;}
 video {
@@ -123,14 +115,8 @@ video {
 </footer>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 <script>
-            window.addEventListener('orientationchange', function(){     // funciona com addEventListener('resize', ...) também!
-                if(window.innerHeight > window.innerWidth) document.getElementById('wrapper').className = 'retrato';
-                else document.getElementById('wrapper').className = 'paisagem';
-            });
-
-            window.addEventListener('load', function(){
-                document.getElementById('wrapper').className = 'retrato';
-            });
+          
+    
         </script>
 </body>
 </html>
