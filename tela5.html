@@ -17,21 +17,11 @@
 
     <style>
 
-        figure { width: 90%; min-width: 17.5em; margin:0 auto;}
+       figure { width: 90%; min-width: 320px; margin:0 auto;}
 figcaption { font: 120% sans-serif; text-align: center;}
-.boxVideo {
-    position: relative;
-    padding-bottom: 56.25%; 
-    padding-top: 25px;
-    height: 0;
-    margin:0 auto;
-}
-.boxVideo iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+video {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
     </style>
 
@@ -55,10 +45,14 @@ figcaption { font: 120% sans-serif; text-align: center;}
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <!-- inicio do card -->
 <figure>
-    <div class="boxVideo">
-        <iframe src="./img/vid/vid1.mp4" width="500" height="375" frameborder="0" allowfullscreen></iframe>
-    </div>
-<figcaption>Exemplo de vídeo Responsivo do Vimeo</figcaption>
+    <video poster="videos/cover.jpg" controls>
+       
+        <source src="./img/vid/vid1.mp4" type="video/mp4" />
+        
+        <p>Seu navegador não suporta o elemento video HTML5.<br /> 
+        Assista o video localmente <br /> <a href="PlymouthRoadrunnerCommercial.mp4">fazendo o download</a></p>
+    </video>
+<figcaption>Video responsivo com HTML5 video</figcaption>
 </figure>
     </div>
   </div>
