@@ -23,10 +23,9 @@
 
   </head>
   <style>
-      #wrapper { width: 400px; height: 400px; }
-            #wrapper.paisagem { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); background-color: lightgreen; }
-            #wrapper.retrato { background-color: lightblue; }
-      
+      #posi {
+          position: fixed;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -41,7 +40,7 @@
         }
       }
     </style>
-  <body id='wrapper'>
+  <body id=posi>
 
   <section class="py-5 text-center container-fluid" style="background:#8A70AB">
     <div class="row py-lg-5">
@@ -133,15 +132,6 @@
 <footer class="text-muted py-5"style="background:#8A70AB">
 
 </footer>
-        <script>
-            window.addEventListener('orientationchange', function(){     // funciona com addEventListener('resize', ...) também!
-                if(window.innerHeight > window.innerWidth) document.getElementById('wrapper').className = 'retrato';
-                else document.getElementById('wrapper').className = 'paisagem';
-            });
-
-            window.addEventListener('load', function(){
-                document.getElementById('wrapper').className = 'retrato';
-            });
-        </script>
+        
 </body>
 </html>
